@@ -1,24 +1,56 @@
-/* style.css */
-body, html {
+/* リセット系 */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   height: 100%;
   font-family: 'sans-serif';
 }
 
-.hero {
-  background-image: url("images/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+/* ナビゲーションのデザイン */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明 */
+  z-index: 1000;
+}
+
+nav ul {
   display: flex;
   justify-content: center;
+  list-style: none;
+  padding: 15px 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ヒーローセクション */
+.hero {
+  height: 100vh;
+  background-image: url('images/bg.jpg'); /* 自分の画像名に変更してね */
+  background-size: cover;
+  background-position: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  padding-top: 60px; /* ナビの高さ分スペース */
 }
 
 .hero h1 {
-  color: white;
   font-size: 3rem;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
