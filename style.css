@@ -46,7 +46,7 @@ nav a:hover {
   background-position: center;
   height: 80vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
 }
@@ -55,8 +55,10 @@ nav a:hover {
   font-size: 3rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.6); /* 背景が見える黒いオーバーレイ */
-  padding: 1rem 2rem;
-  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-size: 3rem;
+  margin: 0;
 }
 
 /* セクション共通 */
@@ -125,8 +127,11 @@ footer {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
   color: white;
   animation: fadeInBg 2s ease-out forwards; /* ここで適用 */
+position: relative;
+  padding-bottom: 80px; /* 下に余白をつけてバランス調整 */
+
 }
