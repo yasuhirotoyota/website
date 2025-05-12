@@ -81,3 +81,16 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+/* フェードインの初期状態 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* フェードインが表示状態になるとき */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
