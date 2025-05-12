@@ -109,3 +109,24 @@ footer {
 .hero h1 {
   animation: zoomFadeIn 1.5s ease-out;
 }
+/* フェードイン効果 */
+@keyframes fadeInBg {
+  0% {
+    opacity: 0;
+    transform: scale(1.05); /* 少し拡大して始まる */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.hero {
+  background: url("images/bg.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  animation: fadeInBg 2s ease-out forwards; /* ここで適用 */
+}
