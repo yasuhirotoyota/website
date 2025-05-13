@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>豊田 泰宏 | プロフィール</title>
+  <title>Yasuhiro Toyota</title>
   <link rel="stylesheet" href="style.css" />
-  
-  <body>
+</head>
 
+<body>
   <header>
     <nav>
       <ul>
@@ -23,25 +23,28 @@
     <h1>Yasuhiro Toyota</h1>
   </div>
 
-
-
   <main>
-    <section id="about">
+    <section id="about"class="fade-in">
       <h2>Profile</h2>
-      <p>こんにちは、ギターとチョコが好きな豊田泰宏です！</p>
+      <p>豊田　泰宏　Guitarist<br>
+        1986年11月29日生まれ<br>
+        大阪府枚方市出身<br>
+        立命館大学を卒業後、西野やすし氏、中村大輔氏に師事<br>
+        現在は滋賀県高島市にて田舎暮らしを満喫中<br>
+      </p>
     </section>
 
-    <section id="music">
+    <section id="music"class="fade-in">
       <h2>Music</h2>
       <p>YouTubeや音源リンクをここに表示します</p>
     </section>
 
-    <section id="schedule">
+    <section id="schedule"class="fade-in">
       <h2>Schedule</h2>
       <p>ライブ予定などを掲載予定です</p>
     </section>
 
-    <section id="contact">
+    <section id="contact"class="fade-in">
       <h2>Contact</h2>
       <p>メール: example@example.com</p>
     </section>
@@ -51,3 +54,22 @@
     <p>&copy; 2025 Yasuhiro Toyota</p>
   </footer>
 </body>
+
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</html>
+
