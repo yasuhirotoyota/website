@@ -48,10 +48,17 @@
 
     <section id="contact" class="fade-in">
       <h2>Contact</h2>
-      <form action="https://formsubmit.co/あなたのメールアドレス" method="POST">
-        <input type="text" name="name" placeholder="お名前" required><br>
-        <input type="email" name="email" placeholder="メールアドレス" required><br>
-        <textarea name="message" placeholder="メッセージ" rows="8" required></textarea><br>
+      <form action="https://formsubmit.co/yasuhirotoyota.123@gmail.com" method="POST">
+        <!-- スパム防止用（空欄のhiddenフィールド） -->
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- 送信後のリダイレクトURL（任意に変更してください） -->
+        <input type="hidden" name="_next" value="https://あなたのサイトのURL/thankyou.html" />
+        <!-- 自動返信メールの送信（任意） -->
+        <input type="hidden" name="_autoresponse" value="お問い合わせありがとうございます。追ってご連絡いたします。" />
+
+        <input type="text" name="name" placeholder="お名前" required /><br />
+        <input type="email" name="email" placeholder="メールアドレス" required /><br />
+        <textarea name="message" placeholder="メッセージ" rows="8" required></textarea><br />
         <button type="submit">送信</button>
       </form>
     </section>
