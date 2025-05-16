@@ -10,12 +10,15 @@
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="#about">Profile</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="メニュー">☰</button>
+        <ul class="nav-links">
+          <li><a href="#about">Profile</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -49,12 +52,8 @@
     <section id="contact" class="fade-in">
       <h2>Contact</h2>
       <form action="https://formsubmit.co/yasuhirotoyota.123@gmail.com" method="POST">
-        <!-- スパム防止用（空欄のhiddenフィールド） -->
         <input type="hidden" name="_captcha" value="false" />
-        <!-- 送信後のリダイレクトURL（任意に変更してください） -->
         <input type="hidden" name="_next" value="https://yasuhirotoyota.github.io/website/thankyou.html" />
-
-        <!-- 自動返信メールの送信（任意） -->
         <input type="hidden" name="_autoresponse" value="お問い合わせありがとうございます。追ってご連絡いたします。" />
 
         <input type="text" name="name" placeholder="お名前" required /><br />
@@ -69,10 +68,10 @@
     <p>&copy; 2025 Yasuhiro Toyota</p>
   </footer>
 
-  <!-- Google Calendar APIスクリプト -->
+  <!-- Google Calendar API -->
   <script>
-    const calendarId = 'yasuhirotoyota.123@gmail.com'; // カレンダーID
-    const apiKey = 'AIzaSyBdiHZUBRsS_7R3b1rOpvHU8ROOoOfW12c'; // APIキー
+    const calendarId = 'yasuhirotoyota.123@gmail.com';
+    const apiKey = 'AIzaSyBdiHZUBRsS_7R3b1rOpvHU8ROOoOfW12c';
 
     async function fetchEvents() {
       const now = new Date().toISOString();
@@ -118,7 +117,7 @@
     fetchEvents();
   </script>
 
-  <!-- スクロールフェードイン -->
+  <!-- フェードイン -->
   <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -130,6 +129,17 @@
     }, { threshold: 0.1 });
 
     fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+  <!-- ハンバーガーメニュー切り替え -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    });
   </script>
 </body>
 </html>
