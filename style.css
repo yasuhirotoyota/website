@@ -26,11 +26,12 @@ header {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 中央揃えに変更 */
   align-items: center;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
+  gap: 3rem; /* メニューリンクとの間に余白を確保 */
 }
 
 .menu-toggle {
@@ -40,6 +41,11 @@ header {
   border: none;
   color: #fff;
   cursor: pointer;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid #0af;
+  outline-offset: 2px;
 }
 
 .nav-links {
@@ -55,13 +61,18 @@ header {
   transition: color 0.3s;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li a:focus {
   color: #0af;
+  outline: none;
+  outline-offset: 2px;
+  outline: 2px solid #0af;
 }
 
 /* ヒーローセクション */
 .hero {
   background: url("images/bg.jpg") no-repeat center center/cover;
+  background-color: #111; /* 背景画像読み込み失敗時用 */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -117,6 +128,11 @@ h2 {
   color: #0af;
 }
 
+#schedule-list a:hover {
+  color: #08c;
+  text-decoration: underline;
+}
+
 /* お問い合わせ */
 form {
   display: flex;
@@ -124,6 +140,11 @@ form {
   gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
+}
+
+form label {
+  font-weight: bold;
+  color: #ccc;
 }
 
 form input,
@@ -156,6 +177,10 @@ form button {
 
 form button:hover {
   background-color: #08c;
+}
+
+form button:active {
+  background-color: #055a9a;
 }
 
 /* フッター */
@@ -195,6 +220,11 @@ footer {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+  }
+
+  .nav-container {
+    justify-content: space-between; /* スマホでは左右に配置 */
+    gap: 0;
   }
 
   .nav-links {
