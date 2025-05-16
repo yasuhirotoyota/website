@@ -10,12 +10,15 @@
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html#about">Profile</a></li>
-        <li><a href="index.html#music">Music</a></li>
-        <li><a href="index.html#schedule">Schedule</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="メニュー">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html#about">Profile</a></li>
+          <li><a href="index.html#music">Music</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -33,7 +36,7 @@
     <p>&copy; 2025 Yasuhiro Toyota</p>
   </footer>
 
-  <!-- スクロールフェードイン（必要なら） -->
+  <!-- スクロールフェードイン -->
   <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -45,6 +48,17 @@
     }, { threshold: 0.1 });
 
     fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+  <!-- ハンバーガーメニュー切り替え -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    });
   </script>
 </body>
 </html>
